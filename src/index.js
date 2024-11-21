@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Header from './layout/Header';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import DestinationIndex from "./Components/DestinationIndex";
+import Header from "./layout/Header";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Header/>
+    <Header />
+    <DestinationIndex />
   </React.StrictMode>
 );
-
