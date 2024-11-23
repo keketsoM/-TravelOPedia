@@ -3,12 +3,17 @@ import { useAddDestinationMutation } from "../api/destinationApi";
 const AddDestinaion = () => {
   const [city, setcity] = useState("");
   const [country, setcountry] = useState("");
-  const [addDestinaion, setDestination] = useAddDestinationMutation();
+  const [addDestination, result] = useAddDestinationMutation();
   const handleAddSubmit = (e) => {
     e.preventDefault();
-
-    setcity(() => {});
-    setcountry(() => {});
+    addDestination({
+      id: Math.random() * 100,
+      city: city,
+      country: country,
+      daysNeeded: parseInt(Math.random() * 10) + 1,
+    });
+    setcity("");
+    setcountry("");
   };
 
   return (

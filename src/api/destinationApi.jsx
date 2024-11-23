@@ -24,10 +24,10 @@ export const destinationAPI = createApi({
       }),
     }),
     deleteDestination: builder.mutation({
-      query: (destination) => ({
+      query: ({id}) => ({
         method: "delete",
-        url: `destination/${destination.id}`,
-        body: destination,
+        url: `destination/${id}`,
+        body: id,
       }),
     }),
   }),
