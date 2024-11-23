@@ -7,10 +7,10 @@ function DestinationList() {
   let content;
 
   if (isLoading) {
-    return (content = <p>Loading....</p>);
+    content = <p>Loading....</p>;
   } else if (isSuccess) {
     console.log(data);
-    return (content = data.map((destination, index) => {
+    content = data.map((destination, index) => {
       return (
         <article key={destination.id}>
           <div className="text-center text-info p-2">
@@ -21,10 +21,11 @@ function DestinationList() {
           </div>
         </article>
       );
-    }));
+    });
   } else if (isError) {
-    return (content = <p>{error}</p>);
+    content = <p>{error}</p>;
   }
+  return <diV className="pt-3">{content}</diV>;
 }
 
 export default DestinationList;
