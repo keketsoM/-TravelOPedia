@@ -9,7 +9,33 @@ export const destinationAPI = createApi({
       query: () => "destination",
     }),
     //MUTATION -> POST/PUT/DELETE
+    AddDestination: builder.mutation({
+      query: (destination) => ({
+        method: "Post",
+        url: "destination",
+        body: destination,
+      }),
+    }),
+    updateDestination: builder.mutation({
+      query: (destination) => ({
+        method: "Put",
+        url: `destination/${destination.id}`,
+        body: destination,
+      }),
+    }),
+    deleteDestination: builder.mutation({
+      query: (destination) => ({
+        method: "delete",
+        url: `destination/${destination.id}`,
+        body: destination,
+      }),
+    }),
   }),
 });
 console.log(destinationAPI);
-export const { useGetAllDestinationQuery } = destinationAPI;
+export const {
+  useGetAllDestinationQuery,
+  useDeleteDestinationMutation,
+  useAddDestinationMutation,
+  useUpdateDestinationMutation,
+} = destinationAPI;

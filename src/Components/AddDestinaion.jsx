@@ -4,7 +4,7 @@ const AddDestinaion = () => {
   const [country, setcountry] = useState("");
 
   const handleAddSubmit = (e) => {
-    e.preventDefalut();
+    e.preventDefault();
 
     setcity(() => {});
     setcountry(() => {});
@@ -12,7 +12,7 @@ const AddDestinaion = () => {
 
   return (
     <div className="p-4 border">
-      <form onSubmit={handleAddSubmit()}>
+      <form onSubmit={handleAddSubmit}>
         <div className="row col-8 offset-2">
           <h4>Enter a new Destination</h4>
           <div className="col-5 p-1"></div>
