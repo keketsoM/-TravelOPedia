@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useAddDestinationMutation } from "../api/destinationApi";
 const AddDestinaion = () => {
   const [city, setcity] = useState("");
   const [country, setcountry] = useState("");
-
+  const [addDestinaion, setDestination] = useAddDestinationMutation();
   const handleAddSubmit = (e) => {
     e.preventDefault();
 
