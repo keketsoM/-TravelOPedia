@@ -1,9 +1,18 @@
-import React from "react";
-import { useGetAllDestinationQuery } from "../api/destinationApi";
+import {
+  useDeleteDestinationMutation,
+  useGetAllDestinationQuery,
+} from "../api/destinationApi";
 function DestinationList() {
   const { data, isLoading, isError, isSuccess, error } =
     useGetAllDestinationQuery();
-  console.log(data);
+  const [setDeleteDestination, result] = useDeleteDestinationMutation();
+
+  function handleDeleteDestination(id) {
+    setDeleteDestination({
+      id: id,
+    });
+  }
+
   let content;
 
   if (isLoading) {
@@ -12,14 +21,31 @@ function DestinationList() {
     console.log(data);
     content = data.map((destination, index) => {
       return (
-        <article key={destination.id}>
-          <div className="text-center text-info p-2">
-            <div>
-              {destination.city}, {destination.country} -{" "}
-              {destination.daysNeeded} days
-            </div>
+        <div
+          className="row py-1"
+          key={destination.id}
+          style={{
+            borderBottom: "1px solid #333",
+            borderTop: "1px solid #333",
+          }}
+        >
+          <div className="col-3 offset-3">
+            {destination.city}, {destination.country}
           </div>
-        </article>
+          <div className="col-1 text-warning">
+            {destination.daysNeeded} days
+          </div>
+          <div className="col-2">
+            <button
+              onClick={() => {
+                handleDeleteDestination(destination.id);
+              }}
+              className="btn btn-danger m-1 form-control"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       );
     });
   } else if (isError) {
