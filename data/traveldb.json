@@ -17,6 +17,12 @@
       "city": "welkom",
       "country": "RSA",
       "daysNeeded": 10
+    },
+    {
+      "id": 76.67902023783451,
+      "city": "virginia",
+      "country": "RSA",
+      "daysNeeded": 2
     }
   ]
 }
