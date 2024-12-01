@@ -1,16 +1,17 @@
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { destinationAPI } from "./api/destinationApi";
+import { Provider } from "react-redux";
 import DestinationIndex from "./Components/DestinationIndex";
+import RandomDestination from "./Components/RandomDestination";
 import Header from "./layout/Header";
-
+import { store } from "./Redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={destinationAPI}>
+    <Provider store={store}>
       <Header />
       <DestinationIndex />
-    </ApiProvider>
+      <RandomDestination />
+    </Provider>
   </React.StrictMode>
 );

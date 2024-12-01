@@ -4,6 +4,7 @@ const AddDestinaion = () => {
   const [city, setcity] = useState("");
   const [country, setcountry] = useState("");
   const [addDestination, result] = useAddDestinationMutation();
+  console.log(city);
   const handleAddSubmit = (e) => {
     e.preventDefault();
     addDestination({
