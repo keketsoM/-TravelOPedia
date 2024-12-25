@@ -1,0 +1,22 @@
+{
+  "destination": [
+    {
+      "id": "96.05191660048857",
+      "city": "Durban",
+      "country": "RSA",
+      "daysNeeded": 8
+    },
+    {
+      "id": "51.75040478307189",
+      "city": "Cape Town",
+      "country": "RSA",
+      "daysNeeded": 10
+    },
+    {
+      "id": "75.43592784510122",
+      "city": "Thabong",
+      "country": "Welkom",
+      "daysNeeded": 9
+    }
+  ]
+}
